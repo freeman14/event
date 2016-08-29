@@ -85,9 +85,10 @@ var Timer = React.createClass({
     return { event: 'Default mock event' };
   },
   componentDidMount: function componentDidMount() {
+    var self = this;
     EventProxy.subscribe('event', function(event){
-      this.setState({ event: event });
-    })
+      self.setState({ event: event });
+    });
   },
   render: function render() {
     return React.createElement(
